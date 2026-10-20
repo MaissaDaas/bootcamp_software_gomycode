@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activité CSS : display et position</title>
+
+<!-- ===== STYLE DE LA PAGE (ne pas modifier) ===== -->
+<style>
+  body { font-family: "Segoe UI", system-ui, sans-serif; color: #1d2433; background: #fff; max-width: 820px; margin: 0 auto; padding: 24px 20px 120px; line-height: 1.5; }
+  h1 { font-size: 1.9rem; margin: 0 0 6px; }
+  h2 { font-size: 1.25rem; margin: 0 0 4px; }
+  h3 { font-size: 1.05rem; margin: 40px 0 4px; padding-top: 14px; border-top: 3px solid #1d2433; }
+  code { background: #eef1f6; padding: 1px 5px; border-radius: 3px; font-size: .92em; }
+  .consigne { margin: 4px 0 10px; }
+  .attendu { margin: 0 0 10px; color: #4a5568; font-size: .95rem; }
+  .intro { background: #fff6d6; border-left: 4px solid #e0a800; padding: 12px 16px; margin: 18px 0 8px; }
+  .zone { background: repeating-linear-gradient(0deg, #f3f5f9 0 19px, #e6eaf1 19px 20px); border: 1px dashed #9aa5b8; padding: 14px; }
+  .mini { display: inline-block; width: 80px; height: 50px; background: #d9d4ff; border: 1px solid #6b5ce7; text-align: center; line-height: 50px; vertical-align: top; }
+  .defilement { height: 190px; overflow: auto; border: 1px solid #9aa5b8; background: #fff; }
+  .defilement p { margin: 0; padding: 10px 14px; }
+  .pile { position: relative; height: 110px; }
+  .pile div { width: 100px; height: 70px; position: absolute; color: #fff; padding: 6px; }
+  .pile .rouge { background: #d6336c; top: 0; left: 0; }
+  .pile .bleu { background: #2b59ff; top: 30px; left: 40px; }
+  .bonus { background: #e8f7ee; border-left: 4px solid #2f9e5a; padding: 8px 14px; }
+</style>
+
+<!-- ============================================================
+     ZONE ÉLÈVE : écris tes réponses UNIQUEMENT dans ce bloc
+     Remplace chaque commentaire « À FAIRE » par du CSS.
+     ============================================================ -->
+<style id="zone-etudiant">
+
+  /* Exercice 1 : block */
+  .ex1 .tag {
+    background: #bfe3ff;
+    padding: 4px 8px;
+    /* À FAIRE : Les trois étiquettes sont des <span>, donc inline par défaut. Transforme-les en blocs de 200px sur 50px, avec 10px de marge. */
+  }
+
+  /* Exercice 2 : inline */
+  .ex2 .mot {
+    background: #c8f0c8;
+    /* À FAIRE : affiche les trois mots sur la même ligne */
+  }
+
+  /* Exercice 3 : inline-block */
+  .ex3 .boite {
+    background: #bfe3ff;
+    border: 2px solid #2b59ff;
+    text-align: center;
+    /* À FAIRE : inline-block, width 100px, height 100px, padding 10px */
+  }
+
+  /* Exercice 4 : display none et visibility hidden */
+  .ex4a .b2 {
+    /* À FAIRE : la boîte 2 disparaît ET son espace aussi */
+  }
+  .ex4b .b2 {
+    /* À FAIRE : la boîte 2 disparaît MAIS son espace reste */
+  }
+
+  /* Exercice 5 : relative */
+  .ex5 .deplace {
+    background: #ffd9a8;
+    padding: 8px;
+    /* À FAIRE : position relative, top 20px, left 30px */
+  }
+
+  /* Exercice 6 : absolute */
+  .ex6 .parent {
+    width: 300px;
+    height: 150px;
+    background: #bfe3ff;
+    padding: 10px;
+    /* À FAIRE : ce parent doit servir de repère pour son enfant */
+  }
+  .ex6 .badge {
+    background: orange;
+    padding: 2px 8px;
+    /* À FAIRE : badge en haut à droite du parent (10px / 10px) */
+  }
+
+  /* Exercice 7 : fixed */
+  .ex7 .bouton-aide {
+    background: #2b59ff;
+    color: #fff;
+    border: 0;
+    padding: 15px;
+    /* À FAIRE : bouton collé en bas à droite de la fenêtre (20px / 20px) */
+  }
+
+  /* Exercice 8 : sticky */
+  .ex8 nav {
+    background: navy;
+    color: #fff;
+    padding: 8px 14px;
+    /* À FAIRE : la barre reste collée en haut quand on fait défiler la boîte */
+  }
+
+  /* Bonus : z-index */
+  .pile .rouge {
+    /* À FAIRE : le carré rouge doit passer AU-DESSUS du bleu */
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Activité CSS : display et position</h1>
+
+<div class="intro">
+  <strong>Comment travailler ?</strong>
+  <ol>
+    <li>Ouvre ce fichier dans ton éditeur (par exemple VS Code) <em>et</em> dans ton navigateur.</li>
+    <li>Descends jusqu’au bloc <code>&lt;style id="zone-etudiant"&gt;</code> en haut du fichier.</li>
+    <li>Remplace chaque commentaire <code>À FAIRE</code> par du CSS, enregistre, puis actualise le navigateur.</li>
+    <li>Ne modifie pas le HTML ni l’autre bloc <code>&lt;style&gt;</code>.</li>
+  </ol>
+</div>
+
+<h2>Partie 1 : la propriété display</h2>
+
+<h3>Exercice 1 : block</h3>
+<p class="consigne">Les trois étiquettes sont des <code>&lt;span&gt;</code>, donc <code>inline</code> par défaut. Transforme-les en blocs de 200px sur 50px, avec 10px de marge.</p>
+<p class="attendu">Résultat attendu : trois rectangles bleus, l’un sous l’autre.</p>
+<div class="zone ex1">
+  <span class="tag">Étiquette 1</span>
+  <span class="tag">Étiquette 2</span>
+  <span class="tag">Étiquette 3</span>
+</div>
+
+<h3>Exercice 2 : inline</h3>
+<p class="consigne">Ces trois <code>&lt;div&gt;</code> sont affichés l’un sous l’autre. Fais-les se suivre sur une seule ligne.</p>
+<p class="attendu">Résultat attendu : Un Deux Trois sur la même ligne.</p>
+<div class="zone ex2">
+  <div class="mot">Un</div>
+  <div class="mot">Deux</div>
+  <div class="mot">Trois</div>
+</div>
+
+<h3>Exercice 3 : inline-block</h3>
+<p class="consigne">Place les trois boîtes sur la même ligne, avec une largeur et une hauteur de 100px et un padding de 10px.</p>
+<p class="attendu">Résultat attendu : trois carrés alignés horizontalement.</p>
+<div class="zone ex3">
+  <div class="boite">Boîte 1</div>
+  <div class="boite">Boîte 2</div>
+  <div class="boite">Boîte 3</div>
+</div>
+
+<h3>Exercice 4 : display: none ou visibility: hidden ?</h3>
+<p class="consigne">Cache la boîte 2 dans chaque zone. Dans la zone A, son espace doit disparaître. Dans la zone B, il doit rester.</p>
+<p class="attendu">Résultat attendu : A = « 1 3 » collés. B = « 1 » puis un trou, puis « 3 ».</p>
+<p><strong>Zone A</strong></p>
+<div class="zone ex4a">
+  <div class="mini b1">1</div><div class="mini b2">2</div><div class="mini b3">3</div>
+</div>
+<p><strong>Zone B</strong></p>
+<div class="zone ex4b">
+  <div class="mini b1">1</div><div class="mini b2">2</div><div class="mini b3">3</div>
+</div>
+
+<h2 style="margin-top:48px">Partie 2 : la propriété position</h2>
+
+<h3>Exercice 5 : relative</h3>
+<p class="consigne">Décale la boîte orange de 20px vers le bas et de 30px vers la droite.</p>
+<p class="attendu">Résultat attendu : la boîte orange est décalée, mais sa place d’origine reste vide entre les deux autres.</p>
+<div class="zone ex5">
+  <p>Paragraphe avant</p>
+  <p class="deplace">Boîte déplacée</p>
+  <p>Paragraphe après</p>
+</div>
+
+<h3>Exercice 6 : absolute</h3>
+<p class="consigne">Place le badge « Nouveau » dans le coin en haut à droite de la carte. Regarde où il se trouve avant de modifier : il est mal placé, pourquoi ?</p>
+<p class="attendu">Résultat attendu : le badge est à 10px du haut et 10px de la droite de la carte bleue.</p>
+<div class="zone ex6">
+  <div class="parent">
+    Carte produit
+    <span class="badge">Nouveau</span>
+  </div>
+</div>
+
+<h3>Exercice 7 : fixed</h3>
+<p class="consigne">Fixe le bouton d’aide en bas à droite de la fenêtre, à 20px des bords. Réduis la hauteur de la fenêtre puis fais défiler la page pour vérifier.</p>
+<p class="attendu">Résultat attendu : le bouton reste visible en bas à droite, même en faisant défiler.</p>
+<div class="zone ex7">
+  <button class="bouton-aide">Besoin d’aide ?</button>
+</div>
+
+<h3>Exercice 8 : sticky</h3>
+<p class="consigne">Fais défiler la boîte ci-dessous. Fais en sorte que la barre de navigation reste collée en haut de la boîte.</p>
+<p class="attendu">Résultat attendu : la barre reste visible pendant le défilement du texte.</p>
+<div class="defilement ex8">
+  <p>Contenu avant la navigation</p>
+  <nav>Navigation : Accueil | Services | Contact</nav>
+  <p>Section 1 : Présentation</p>
+  <p>Section 2 : Nos services</p>
+  <p>Section 3 : Tarifs</p>
+  <p>Section 4 : Équipe</p>
+  <p>Section 5 : Contact</p>
+  <p>Section 6 : Mentions légales</p>
+</div>
+
+<h3>Bonus : z-index</h3>
+<div class="bonus">
+  <p class="consigne">Les deux carrés se chevauchent et le bleu passe devant. Utilise <code>z-index</code> pour mettre le rouge au-dessus.</p>
+</div>
+<div class="zone" style="margin-top:10px">
+  <div class="pile">
+    <div class="rouge">Rouge</div>
+    <div class="bleu">Bleu</div>
+  </div>
+</div>
+
+<h3>Pour finir : réponds en commentaire</h3>
+<p class="consigne">Dans la zone élève, ajoute un commentaire CSS avec tes réponses :</p>
+<ol>
+  <li>Quelle est la différence entre <code>display: none</code> et <code>visibility: hidden</code> ?</li>
+  <li>Dans l’exercice 6, pourquoi le parent doit-il être en <code>position: relative</code> ?</li>
+  <li>Quelle différence y a-t-il entre <code>fixed</code> et <code>sticky</code> ?</li>
+</ol>
+
+</body>
+</html>

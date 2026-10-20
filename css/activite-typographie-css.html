@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activité CSS : la typographie</title>
+
+<!-- ===== STYLE DE LA PAGE (ne pas modifier) ===== -->
+<style>
+  .page { font-family: "Segoe UI", system-ui, sans-serif; color: #1d2433; max-width: 820px; margin: 0 auto; padding: 24px 20px 80px; line-height: 1.5; }
+  body { margin: 0; }
+  .page > h1 { font-size: 1.9rem; margin: 0 0 6px; }
+  .page h3 { font-size: 1.05rem; margin: 40px 0 4px; padding-top: 14px; border-top: 3px solid #1d2433; }
+  code { background: #eef1f6; padding: 1px 5px; border-radius: 3px; font-size: .92em; }
+  .consigne { margin: 4px 0 10px; }
+  .attendu { margin: 0 0 10px; color: #4a5568; font-size: .95rem; }
+  .intro { background: #fff6d6; border-left: 4px solid #e0a800; padding: 12px 16px; margin: 18px 0 8px; }
+  .zone { border: 1px dashed #9aa5b8; padding: 14px; background: #fff; }
+  .zone p, .zone h2, .zone h4 { margin: 0 0 8px; }
+  .zone .boite { border: 1px solid #c3cada; padding: 8px 10px; margin-bottom: 8px; }
+</style>
+
+<!-- ============================================================
+     ZONE ÉLÈVE : écris tes réponses UNIQUEMENT dans ce bloc
+     Remplace chaque commentaire « À FAIRE » par du CSS.
+     ============================================================ -->
+<style id="zone-etudiant">
+
+  /* Exercice 1 : font-family */
+  .ex1 h2 {
+    /* À FAIRE : police Arial, avec sans-serif en secours */
+  }
+  .ex1 p {
+    /* À FAIRE : police Georgia, avec serif en secours */
+  }
+
+  /* Exercice 2 : color */
+  .ex2 h2 {
+    /* À FAIRE : couleur avec un NOM de couleur (ex. blue) */
+  }
+  .ex2 p {
+    /* À FAIRE : couleur avec un code HEXADÉCIMAL (ex. #ff0000) */
+  }
+  .ex2 span {
+    /* À FAIRE : couleur avec rgb(0, 128, 0) + un fond avec background-color */
+  }
+
+  /* Exercice 3 : font-style et font-weight */
+  .ex3 em {
+    /* À FAIRE : mets en italique */
+  }
+  .ex3 strong {
+    /* À FAIRE : épaisseur 700 */
+  }
+  .ex3 .gras {
+    font-style: bold; /* À FAIRE : cette ligne est incorrecte, corrige-la */
+  }
+
+  /* Exercice 4 : text-decoration */
+  .ex4 h2 {
+    /* À FAIRE : souligné */
+  }
+  .ex4 p {
+    /* À FAIRE : barré */
+  }
+  .ex4 a {
+    /* À FAIRE : supprime le soulignement et mets la couleur #2563eb */
+  }
+
+  /* Exercice 5 : text-align */
+  .ex5 .a { /* À FAIRE : à gauche */ }
+  .ex5 .b { /* À FAIRE : centré */ }
+  .ex5 .c { /* À FAIRE : à droite */ }
+  .ex5 .d { /* À FAIRE : justifié */ }
+
+  /* Exercice 6 : line-height */
+  .ex6 .serre {
+    font-size: 16px;
+    /* À FAIRE : line-height de 1 */
+  }
+  .ex6 .aere {
+    font-size: 16px;
+    /* À FAIRE : line-height de 1.5. Quelle hauteur de ligne en px ? (réponds en commentaire) */
+  }
+
+  /* Exercice 7 : letter-spacing et word-spacing */
+  .ex7 h2 {
+    /* À FAIRE : letter-spacing de 4px */
+  }
+  .ex7 p {
+    /* À FAIRE : word-spacing de 10px */
+  }
+
+  /* Exercice 8 : font-size, px / em / rem */
+  .ex8 .parent {
+    /* À FAIRE : font-size 20px */
+  }
+  .ex8 .child {
+    /* À FAIRE : font-size 1.5em. Taille calculée ? (commentaire) */
+  }
+  .ex8 .title {
+    /* À FAIRE : font-size 2rem. Taille calculée ? (commentaire) */
+  }
+
+  /* Atelier final : page de présentation */
+  .presentation {
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+  }
+  .presentation h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2563eb;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  .presentation .description {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    word-spacing: 2px;
+    /* À FAIRE (consignes 3, 4, 6) : italique, puis centre, puis change line-height */
+  }
+  .presentation a {
+    font-size: 16px;
+    color: #2563eb;
+    text-decoration: none;
+  }
+  /* À FAIRE (consigne 7) : a:hover avec soulignement */
+
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Activité CSS : la typographie</h1>
+<p>Durée conseillée : 60 minutes.</p>
+
+<div class="intro">
+  <strong>Comment travailler ?</strong>
+  <ol>
+    <li>Ouvre ce fichier dans ton éditeur (par exemple VS Code) <em>et</em> dans ton navigateur.</li>
+    <li>Va dans le bloc <code>&lt;style id="zone-etudiant"&gt;</code> en haut du fichier.</li>
+    <li>Remplace chaque commentaire <code>À FAIRE</code> par du CSS, enregistre, puis actualise le navigateur.</li>
+    <li>Ne modifie pas le HTML ni l’autre bloc <code>&lt;style&gt;</code>.</li>
+  </ol>
+</div>
+
+<h3>Exercice 1 : font-family</h3>
+<p class="consigne">Applique Arial au titre et Georgia au paragraphe. Prévois toujours une famille générique de secours.</p>
+<p class="attendu">Résultat attendu : titre sans empattement, paragraphe avec empattements.</p>
+<div class="zone ex1">
+  <h2>Bienvenue chez nous !</h2>
+  <p>Le choix de la police influence le style général d’un site.</p>
+</div>
+
+<h3>Exercice 2 : color</h3>
+<p class="consigne">Utilise un format différent pour chaque élément : nom, hexadécimal, rgb. Pour le <code>span</code>, ajoute aussi une couleur de fond afin de distinguer <code>color</code> de <code>background-color</code>.</p>
+<p class="attendu">Résultat attendu : un titre bleu, un paragraphe rouge, un mot vert sur fond clair.</p>
+<div class="zone ex2">
+  <h2>Un titre coloré</h2>
+  <p>Un paragraphe avec un <span>mot important</span> au milieu.</p>
+</div>
+
+<h3>Exercice 3 : font-style et font-weight</h3>
+<p class="consigne">Mets en forme les trois textes. Attention : la dernière ligne contient une erreur à corriger.</p>
+<p class="attendu">Résultat attendu : un mot en italique, un mot en gras, et la dernière phrase en gras.</p>
+<div class="zone ex3">
+  <p>Ce mot est en <em>italique</em> et celui-ci est en <strong>gras</strong>.</p>
+  <p class="gras">Cette phrase doit être en gras.</p>
+</div>
+
+<h3>Exercice 4 : text-decoration</h3>
+<p class="consigne">Souligne le titre, barre le paragraphe, puis retire le soulignement du lien.</p>
+<p class="attendu">Résultat attendu : titre souligné, paragraphe barré, lien bleu sans soulignement.</p>
+<div class="zone ex4">
+  <h2>Titre souligné</h2>
+  <p>Ancien prix : 50 euros.</p>
+  <a href="#">Voir l’offre</a>
+</div>
+
+<h3>Exercice 5 : text-align</h3>
+<p class="consigne">Aligne chaque boîte comme indiqué dans son texte.</p>
+<p class="attendu">Résultat attendu : les quatre alignements sont visibles. Le texte justifié doit former un bloc régulier.</p>
+<div class="zone ex5">
+  <div class="boite a">À gauche : le texte est aligné à gauche.</div>
+  <div class="boite b">Au centre : le texte est centré.</div>
+  <div class="boite c">À droite : le texte est aligné à droite.</div>
+  <div class="boite d">Justifié : la justification répartit l’espace entre les mots pour aligner le texte sur les deux côtés du conteneur lorsque cela est possible, ce qui se voit surtout sur plusieurs lignes.</div>
+</div>
+
+<h3>Exercice 6 : line-height</h3>
+<p class="consigne">Compare les deux paragraphes. Calcule en commentaire la hauteur d’une ligne du second (16 × 1,5).</p>
+<p class="attendu">Résultat attendu : le premier est très serré, le second plus aéré.</p>
+<div class="zone ex6">
+  <p class="serre">Le développement web permet de créer des sites interactifs et modernes. Les propriétés CSS facilitent la mise en page et rendent la lecture plus agréable.</p>
+  <p class="aere">Le développement web permet de créer des sites interactifs et modernes. Les propriétés CSS facilitent la mise en page et rendent la lecture plus agréable.</p>
+</div>
+
+<h3>Exercice 7 : letter-spacing et word-spacing</h3>
+<p class="consigne">Espace les lettres du titre et les mots du paragraphe. Teste ensuite une valeur exagérée (20px) : que remarques-tu sur la lecture ?</p>
+<p class="attendu">Résultat attendu : un titre aéré lettre par lettre, un paragraphe avec de grands espaces entre les mots.</p>
+<div class="zone ex7">
+  <h2>Développement Web</h2>
+  <p>Apprendre le CSS devient plus facile.</p>
+</div>
+
+<h3>Exercice 8 : px, em et rem</h3>
+<p class="consigne">Applique les tailles indiquées, puis écris en commentaire la taille calculée de <code>.child</code> et de <code>.title</code>. Ici, la taille de l’élément racine <code>html</code> est de 16px.</p>
+<p class="attendu">Résultat attendu : le parent à 20px, l’enfant plus grand que lui, le titre le plus grand des trois.</p>
+<div class="zone ex8">
+  <div class="parent">
+    Parent
+    <div class="child">Enfant (em)</div>
+  </div>
+  <div class="title">Titre (rem)</div>
+</div>
+
+<h3>Atelier final : ta page de présentation</h3>
+<p class="consigne">Voici une page de portfolio. À partir du CSS de départ de la zone élève, réalise ces consignes :</p>
+<ol>
+  <li>Change la police du titre et du paragraphe.</li>
+  <li>Change la couleur du titre.</li>
+  <li>Mets le paragraphe en italique.</li>
+  <li>Centre le paragraphe, puis teste la justification.</li>
+  <li>Augmente la taille du titre à 48px.</li>
+  <li>Modifie le <code>line-height</code> du paragraphe.</li>
+  <li>Souligne le lien au survol avec <code>a:hover</code>.</li>
+</ol>
+<div class="zone">
+  <div class="presentation">
+    <h1>Bienvenue sur mon portfolio</h1>
+    <p class="description">Je suis développeuse web passionnée par la création d’applications modernes et faciles à utiliser.</p>
+    <a href="#">Découvrir mes projets</a>
+  </div>
+</div>
+
+<h3>Pour finir : réponds en commentaire</h3>
+<ol>
+  <li>Pourquoi <code>font-style: bold</code> est-il incorrect ?</li>
+  <li>Quelle est la différence entre <code>em</code> et <code>rem</code> ?</li>
+  <li>Pourquoi vaut-il mieux éviter un <code>letter-spacing</code> très grand dans un paragraphe ?</li>
+</ol>
+
+</div>
+</body>
+</html>
